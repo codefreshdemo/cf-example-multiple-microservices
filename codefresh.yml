@@ -2,6 +2,7 @@ version: '1.0'
 steps:
   build-service-1:
     type: build
+    working_directory: ${{main_clone}}/cf-example-build-and-push
     description: UC - build step
     image_name: codefreshdemo/service-1
     dockerfile: cf-example-build-and-push/Dockerfile
@@ -9,6 +10,7 @@ steps:
 
   build-service-2:
     type: build
+    working_directory: ${{main_clone}}/cf-example-build-arguments
     description: UC - build step
     image_name: codefreshdemo/service-2
     dockerfile: cf-example-build-arguments/Dockerfile
