@@ -5,7 +5,7 @@ steps:
     working_directory: ${{main_clone}}/cf-example-build-and-push
     description: UC - build step
     image_name: codefreshdemo/service-1
-    dockerfile: cf-example-build-and-push/Dockerfile
+    dockerfile: Dockerfile
     tag: ${{CF_BRANCH}}
 
   build-service-2:
@@ -13,5 +13,5 @@ steps:
     working_directory: ${{main_clone}}/cf-example-build-arguments
     description: UC - build step
     image_name: codefreshdemo/service-2
-    dockerfile: cf-example-build-arguments/Dockerfile
+    dockerfile: Dockerfile
     tag: ${{CF_BRANCH}}
