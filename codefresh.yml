@@ -8,6 +8,13 @@ steps:
     dockerfile: Dockerfile
     tag: ${{CF_BRANCH}}
 
+  unit-test-service-1:
+    image: node:latest
+    working_directory: ${{main_clone}}/cf-example-build-and-push
+    commands:
+      - echo test1
+      - pwd
+
   build-service-2:
     type: build
     working_directory: ${{main_clone}}/cf-example-build-arguments
@@ -15,3 +22,10 @@ steps:
     image_name: codefreshdemo/service-2
     dockerfile: Dockerfile
     tag: ${{CF_BRANCH}}
+
+  unit-test-service-2:
+    image: node:latest
+    working_directory: ${{main_clone}}/cf-example-build-arguments
+    commands:
+      - echo test2
+      - pwd
